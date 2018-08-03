@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var status = ContextCompat.checkSelfPermission(this ,Manifest.permission.READ_EXTERNAL_STORAGE)
+        var status = ContextCompat.checkSelfPermission(this ,Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
         if(status == PackageManager.PERMISSION_GRANTED){
             // Call ReadFiles function
@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         }else{
              //REquest to user to grant permission
             ActivityCompat.requestPermissions(this  ,
-                    arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), 0)
+                    arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), 0)
 
         }
 
@@ -60,6 +60,8 @@ class MainActivity : AppCompatActivity() {
             var file = File(path)
         }
 
+       /*
+        Arrary Adpter to present Data [ START ]
         // declare the array & store data into files arrary
         var files:Array<String> = file.list()
 
@@ -67,8 +69,19 @@ class MainActivity : AppCompatActivity() {
         var myadapter = ArrayAdapter<String>(this ,
                 android.R.layout.simple_list_item_single_choice,files)
 
-        // set adpter to list view 
+        // set adpter to list view
         lview.adapter = myadapter
+        Arrary Adpter to present Data [ END ]
+        */
+
+        //set arrary adapter in file arrary
+        var files:Array<File> = file.listFiles()
+
+        //set custome adapter for list view
+        // passing two paramenter
+        //1 is files arrary
+        //2 activity
+        lview.adapter = MyAdapter(files,this)
 
 
 

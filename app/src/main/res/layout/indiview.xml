@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_weight="0.2"
+        android:src="@mipmap/ic_launcher_round"
+        android:id="@+id/imgview"
+       />
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.7"
+        android:orientation="vertical"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="File Name"
+            android:id="@+id/name"
+            android:textColor="#FFF000"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="File Size"
+            android:id="@+id/size"
+            android:textColor="#0000FF"
+            android:textSize="20sp"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:src="@drawable/ic_delete_forever_black_24dp"
+        android:layout_gravity="center"
+        android:id="@+id/del"
+
+
+        />
+
+</LinearLayout>
